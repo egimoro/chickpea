@@ -7,9 +7,11 @@ from datetime import datetime
 
 'This is a script on chickpea delivery service'
 
-start=datetime(2015,1,1,0,0)
+start=datetime(2015,1,1,0,0)  #The start date is 1st January 2015 at 00:00
 
 rng=pd.date_range(start,periods=700,freq='H')
+
+#The date range starts from the variable above and has 700 rows in periods and the default frequency is in hours
 
 chickpea=pd.DataFrame({'Recipe':np.random.choice(['Chana Masala','Hummus','Shrimp salad','Greek Salad wraps',
                                                  'Roasted Salmon and Smokey greens','Farmy Hummus',
@@ -29,13 +31,18 @@ chickpea=pd.DataFrame({'Recipe':np.random.choice(['Chana Masala','Hummus','Shrim
                                                 'Cologne','Hamburg','Postdam','Hanover','Dusseldorf',
                                                 'Bremen'],len(rng))}, index=rng)
 
-print(chickpea)
+#For random choice the algorithm choses between 2 or more strings
+#randint indicates only random integer numbers can be selected
+#len(rng) the column follows the length of the variable rng
+
+print(chickpea)  #print the elaborated data-set
 
 chickpea['Order status']=np.random.choice(['sent','pending','received','rejected'],len(rng))
 
+#we can add a new column to indicate the status of the delivery
 print(chickpea)
 
-chickpea.to_csv('chickpea.csv')
+chickpea.to_csv('chickpea.csv') #Export the dataset in csv format
 
 print(chickpea.describe())
 
@@ -52,7 +59,7 @@ plt.show()
 chickpea1=chickpea.iloc[170:478].cumsum()
 
 print(chickpea1.plot(legend=True))
-
+ 
 plt.show()
 
 status=chickpea.iloc[25:300].groupby('Order status').size()
