@@ -13,6 +13,12 @@ rng=pd.date_range(start,periods=700,freq='H')
 
 #The date range starts from the variable above and has 700 rows in periods and the default frequency is in hours
 
+start=datetime(2015,1,1,0,0) #The start date is 1st January 2015 at 00:00
+
+rng=pd.date_range(start,periods=700,freq='H')
+
+#The date range starts from the variable above and has 700 rows in periods and the default frequency is in hours
+
 chickpea=pd.DataFrame({'Recipe':np.random.choice(['Chana Masala','Hummus','Shrimp salad','Greek Salad wraps',
                                                  'Roasted Salmon and Smokey greens','Farmy Hummus',
                                                   'Bean Medley Chili','Nutty Orzo and Vegetables',
@@ -31,7 +37,7 @@ chickpea=pd.DataFrame({'Recipe':np.random.choice(['Chana Masala','Hummus','Shrim
                                                 'Cologne','Hamburg','Postdam','Hanover','Dusseldorf',
                                                 'Bremen'],len(rng))}, index=rng)
 
-#For random choice the algorithm choses between 2 or more strings
+#For random choice the algorithm chooses between 2 or more strings
 #randint indicates only random integer numbers can be selected
 #len(rng) the column follows the length of the variable rng
 
@@ -44,25 +50,35 @@ print(chickpea)
 
 chickpea.to_csv('chickpea.csv') #Export the dataset in csv format
 
-print(chickpea.describe())
+print(chickpea.describe()) #Statistical description of the dataset
 
 chickpeaplot=chickpea.reset_index(drop=True)
 
+#Create a new dataframe by dropping the index of the original one
+
 print(chickpeaplot.iloc[150:270].plot.area(stacked=False))
 
-plt.show()
+#Create area plot by slicing the rows of the new dataframe
+
+plt.show() #Display the plot
 
 print(chickpeaplot[20:300].plot.scatter(x='Price',y='Volume'))
+
+#Make a scatter plot with the price and volume of the dataframe
 
 plt.show()
 
 chickpea1=chickpea.iloc[170:478].cumsum()
 
+#Another dataframe with a cumulative sum of the columns
+
 print(chickpea1.plot(legend=True))
- 
+
 plt.show()
 
 status=chickpea.iloc[25:300].groupby('Order status').size()
+
+#Slice the rows and group the dataframe by the column order status
 
 print(status)
 
@@ -70,7 +86,7 @@ print(status.plot.bar())
 
 plt.show()
 
-print(chickpea[chickpea.City=='Berlin'])
+print(chickpea[chickpea.City=='Berlin']) #Print the dataset where the city is Berlin
 
 city=chickpea.iloc[75:650].groupby('City').size()
 
@@ -78,7 +94,7 @@ print(city.plot.bar())
 
 plt.show()
 
-city=chickpea.iloc[175:350].groupby('Restaurant').size()
+restaurant=chickpea.iloc[175:350].groupby('Restaurant').size()
 
 print(city.plot.bar())
 
