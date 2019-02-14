@@ -78,11 +78,13 @@ plt.show()
 
 status=chickpea.iloc[25:300].groupby('Order status').size()
 
-#Slice the rows and group the dataframe by the column order status
+#Group the sliced dataframe in rows by the size of the order status
 
 print(status)
 
 print(status.plot.bar())
+
+#make a bar plot of the grouped delivery status
 
 plt.show()
 
@@ -90,13 +92,21 @@ print(chickpea[chickpea.City=='Berlin']) #Print the dataset where the city is Be
 
 city=chickpea.iloc[75:650].groupby('City').size()
 
+#Group the sliced dataframe in rows by the sizes of the cities
+
+print(city)
+
 print(city.plot.bar())
 
 plt.show()
 
 restaurant=chickpea.iloc[175:350].groupby('Restaurant').size()
 
-print(city.plot.bar())
+#Group the sliced dataframe in rows by the sizes of the restaurants
+
+print(restaurant)
+
+print(restaurant.plot.bar())
 
 plt.show()
 
