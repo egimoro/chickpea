@@ -100,4 +100,4 @@ print(city.plot.bar())
 
 plt.show()
 
-print(chickpea[chickpea.Volume<=40])
+print(chickpea[chickpea.Volume<40])
