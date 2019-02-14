@@ -111,3 +111,4 @@ print(restaurant.plot.bar())
 plt.show()
 
 print(chickpea[chickpea.Volume<40])
+#Print the dataframe where the volume of the order is less than 40
