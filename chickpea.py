@@ -112,3 +112,7 @@ plt.show()
 
 print(chickpea[chickpea.Volume<40])
 #Print the dataframe where the volume of the order is less than 40
+
+chickpea['Payment method']=np.random.choice(['credit card','debit card','cash','voucher','mobile payment']),len(rng))
+
+print(chickpea)
