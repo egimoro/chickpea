@@ -117,10 +117,4 @@ chickpea['Payment method']=np.random.choice(['credit card','debit card','cash','
 
 print(chickpea)
 
-price=chickpea.iloc[200:250].groupby('Price').mean()
-
-print(price)
-
-print(price.plot.bar(stacked=True))
-
-plt.show()
+print(chickpea.pivot(index='Restaurant',columns=City, values='Price'))
