@@ -117,7 +117,7 @@ chickpea['Payment method']=np.random.choice(['credit card','debit card','cash','
 
 print(chickpea)
 
-price=chickpea.iloc[200:450].groupby('Price').mean()
+price=chickpea.iloc[200:250].groupby('Price').mean()
 
 print(price)
 
