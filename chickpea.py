@@ -120,3 +120,5 @@ print(chickpea)
 print(chickpea.pivot_table('Price','Restaurant'))
 
 print(chickpea.pivot_table('Price','Recipe'))
+
+print(chickpea.pivot_table('Volume','City'))
