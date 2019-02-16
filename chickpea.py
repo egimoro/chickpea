@@ -117,4 +117,6 @@ chickpea['Payment method']=np.random.choice(['credit card','debit card','cash','
 
 print(chickpea)
 
-print(chickpea.pivot(index='Restaurant',columns=City, values='Price'))
+print(chickpea.pivot_table('Price','Restaurant'))
+
+print(chickpea.pivot_table('Price','Recipe'))
