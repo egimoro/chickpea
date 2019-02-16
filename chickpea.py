@@ -113,6 +113,14 @@ plt.show()
 print(chickpea[chickpea.Volume<40])
 #Print the dataframe where the volume of the order is less than 40
 
-chickpea['Payment method']=np.random.choice(['credit card','debit card','cash','voucher','mobile payment']),len(rng))
+chickpea['Payment method']=np.random.choice(['credit card','debit card','cash','voucher','mobile payment'],len(rng))
 
 print(chickpea)
+
+price=chickpea.iloc[200:450].groupby('Price').mean()
+
+print(price)
+
+print(price.plot.bar(stacked=True))
+
+plt.show()
