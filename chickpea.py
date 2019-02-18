@@ -124,3 +124,7 @@ print(chickpea.pivot_table('Price','Recipe'))
 print(chickpea.pivot_table('Volume','City'))
 
 print(chickpea.pivot_table('Price','Payment method'))
+
+chickpea1=chickpea.iloc[170:478].reset_index(drop=True)
+
+print(chickpea1)
