@@ -3,6 +3,7 @@ import numpy.random as randn
 import pandas as pd
 import matplotlib.pyplot as plt
 from datetime import datetime
+from datetime import timedelta
 
 
 'This is a script on chickpea delivery service'
@@ -129,6 +130,12 @@ chickpea1=chickpea.iloc[170:478].reset_index(drop=True)
 
 print(chickpea1)
 
-chickpea1['Order datetime']=pd.date_range(datetime(2016,3,2,9,15),periods=308,freq='Min')
+chickpea1['Order datetime']=pd.date_range(datetime(2016,3,2,9,15,1),periods=308,freq='Min')
+
+print(chickpea1)
+
+chickpea1['Delivery datetime']=chickpea1['Order datetime']+timedelta(minutes=np.random.randint(15,60))
+
+print(chickpea1['Delivery datetime'])
 
 print(chickpea1)
