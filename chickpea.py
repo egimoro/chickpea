@@ -128,3 +128,7 @@ print(chickpea.pivot_table('Price','Payment method'))
 chickpea1=chickpea.iloc[170:478].reset_index(drop=True)
 
 print(chickpea1)
+
+chickpea1['Order datetime']=pd.date_range(datetime(2016,3,2,9,15),periods=308,freq='Min')
+
+print(chickpea1)
