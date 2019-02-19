@@ -4,6 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from datetime import datetime
 from datetime import timedelta
+import random
 
 
 'This is a script on chickpea delivery service'
@@ -134,7 +135,9 @@ chickpea1['Order datetime']=pd.date_range(datetime(2016,3,2,9,15,1),periods=308,
 
 print(chickpea1)
 
-chickpea1['Delivery datetime']=chickpea1['Order datetime']+timedelta(minutes=np.random.randint(15,60),seconds=np.random.randint(0,60))
+rng=60 
+
+chickpea1['Delivery datetime']=chickpea1['Order datetime']+timedelta(minutes=np.random.randint(15,30),seconds=np.random.randint(0,60))
 
 print(chickpea1['Delivery datetime'])
 
