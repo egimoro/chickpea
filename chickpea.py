@@ -137,7 +137,7 @@ print(chickpea1)
 
 rng=60 
 
-chickpea1['Delivery datetime']=chickpea1['Order datetime']+timedelta(minutes=np.random.randint(15,30),seconds=np.random.randint(0,60))
+chickpea1['Delivery datetime']=chickpea1['Order datetime']+timedelta(minutes=np.random.randint(30,60),seconds=np.random.randint(0,60))
 
 print(chickpea1['Delivery datetime'])
 
